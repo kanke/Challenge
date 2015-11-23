@@ -1,0 +1,110 @@
+/******************************************************************************************
+
+Button specific styles
+
+******************************************************************************************/
+
+button {
+	border: 1px solid darken(@navigation-background-color, 5%);
+	border-radius: 5px;
+	padding: 6px 15px;
+	background: none;
+	color: darken(@navigation-background-color, 5%);
+	cursor: pointer;
+	font-size: @default-font-size - 1px;
+	font-weight: @weight-medium;
+	vertical-align: bottom;
+	outline: none;
+	white-space: nowrap;
+	
+	&.bare {
+		border: none;
+		color: @medium-text-color;
+		
+		i {
+			color: @light-text-color;
+			margin-right: 8px;
+
+			&:hover {
+				color: @navigation-background-color;
+			}
+		}
+		
+		&:hover {
+			color: @navigation-background-color;
+		}
+	}
+	
+	&.solid {
+		color: @paper-background-color;
+		background-color: darken(@navigation-background-color, 5%);
+	}
+	
+	&:hover {
+		color: @navigation-background-color;
+	}
+}
+
+.file-selector {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	width: 85px;
+	height: 28px;
+	
+	input {
+		position: absolute;
+		opacity: 0.0001;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		cursor: pointer;
+	}
+}
+
+.clickable {
+	cursor: pointer;
+	
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.checkbox {
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+	color: @background-glyph-color;
+	
+	margin-right: 10px;
+	
+	&.circle {
+		background-image: url(../img/check-circled-outlined-grey.svg);
+		width: 13px;
+		height: 13px;
+		
+		&.checked {
+			background-image: url(../img/checked-circled-filled-red.svg);
+		}
+	}
+}
+
+.checkbox-parent {
+	cursor: pointer;
+	
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	
+	&.checked {
+		color: @navigation-background-color;
+	}
+}

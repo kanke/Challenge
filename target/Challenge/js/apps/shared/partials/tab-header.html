@@ -1,0 +1,5 @@
+<div ng-controller="ctrlViewNavigation" class="tab-bar">
+	<ul>
+		<li ng-repeat="tab in currentSection" class="text-link clickable" ng-click="changeTabView($index)" ng-class="tab.active? 'current' : ''  "><a ng-href="#/{{tab.app}}">{{tab.title}}</a></li>
+	</ul>
+</div>

@@ -1,0 +1,510 @@
+/******************************************************************************************
+
+List related styles
+
+******************************************************************************************/
+
+.userPortraitIcon() {
+	float: left;
+	position: relative;
+
+	width: 35px;
+	height: 35px;
+	
+	vertical-align: top;
+	
+	span {
+		position: absolute;
+		left: 0;
+		top: 0;
+		
+		width: 35px;
+		height: 35px;
+		
+		overflow: hidden;
+		display: block;
+		
+		color: @paper-background-color;
+		font-size: 13px;
+		font-weight: @weight-medium;
+		line-height: 35px;
+		text-align: center;
+	}
+	
+	i {
+		position: absolute;
+		left: 0;
+		top: 0;
+		
+		width: 35px;
+		height: 35px;
+		
+		overflow: hidden;
+		display: block;
+		
+		color: @paper-background-color;
+		font-size: 35px;
+
+		line-height: 35px;
+		text-align: center;
+
+		&:before {
+			color: #848A8E;
+		}
+	}
+}
+
+ul.file-list {
+	overflow: auto;
+	margin: 0 0 50px 178px;
+	
+	@media (max-width: @max-mobile-width) {
+		margin-left: 10px;
+	}
+	
+	@media (max-width: @tablet-screen-width) {
+		margin-left: 10px;
+		clear: left;
+	}
+	
+	@media (max-width: @small-tablet-screen-width) {
+		margin: 0 0 50px;
+	}
+	
+	li {
+		position: relative;
+		float: left;
+		
+		padding: 17px 13px;
+		margin: 0;
+		
+		width: 179px - 13px - 13px;
+		height: 61px - 17px - 17px;
+		
+		@media (max-width: @small-tablet-screen-width) {
+			width: 171px - 13px - 13px;
+		}
+		
+		@media (max-width: @max-mobile-width) {
+			width: 141px - 13px - 13px;
+		}
+		
+		cursor: pointer;
+		
+		&:hover {
+			background-color: @pasteboard-background-color;
+			
+			&:before {
+				border-color: darken(@pasteboard-background-color, 20%) @paper-background-color;
+			}
+		}
+		
+		font-weight: @weight-medium;
+		line-height: @default-font-size + 1px;
+		
+		span {
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			
+			width: 160px;
+			
+			display: inline-block;
+			overflow: hidden;
+			
+			@media (max-width: @max-mobile-width) {
+				width: 130px;
+			}
+		}
+		
+		span.subheading {
+			display: block;
+			font-weight: @weight-book;
+			color: @light-text-color;
+		}
+		
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			border-width: 0 11px 11px 0;
+			border-style: solid;
+			
+			border-color: @paper-background-color @paper-background-color;
+		}
+	}
+}
+
+div.activity-log {
+	margin: 0 0 50px 25px;
+	overflow: auto;
+	
+	@media (max-width: @tablet-screen-width) {
+		margin-left: 10px;
+	}
+	
+	@media (max-width: @small-tablet-screen-width) {
+		margin: 0 0 50px;
+	}
+	
+	@media (max-width: @max-mobile-width) {
+		margin-left: 5px;
+	}
+	
+	.entry {
+		position: relative;
+		clear: both;
+		overflow: auto;
+		padding-bottom: 20px;
+		
+		table.block-table {
+			float: right;
+			width: 95%;
+			position: relative;
+			z-index: 10;
+			background-color: white;
+			clear: both;
+		}
+		
+		.date, .event {
+			vertical-align: top;
+		}
+		
+		> div {
+			display: inline-block;
+		}
+
+		.date {
+			padding-top: 10px;
+			width: 80px;
+			float: left;
+
+			text-align: right;
+			font-size: @default-font-size - 1px;
+			font-weight: @weight-medium;
+			
+			.time {
+				display: block;
+				
+				font-size: @default-font-size - 2px;
+				font-weight: @default-font-weight;
+				color: @light-text-color;
+			}
+		}
+		
+		.marker {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 80px;
+			width: 45px;
+			overflow: hidden;
+			z-index: 1;
+			
+			color: #31363C;
+			
+			text-align: center;
+			
+			i {
+				font-size: 9px;
+				top: 6px;
+				position: relative;
+			}
+			
+			background-image: url(../img/box-grey.svg);
+			background-size: 2px 2px;
+			background-position: top center;
+			background-repeat: repeat-y;
+			
+			&.red {
+				color: #82C244;
+			}
+			
+			&.green {
+				color: #D20605;
+			}
+			
+			&.arrow {
+				background-image: url(../img/arrow-front-up-grey.svg), url(../img/box-grey.svg);
+				background-size: 30px 10px, 2px 18px;
+				background-position: center top, center bottom;
+				background-repeat: no-repeat, no-repeat;
+			}
+		}
+		
+		&.first {
+			padding-bottom: 10px;
+
+			.marker {
+				&:before {
+					top: auto;
+					height: 18px;
+				}
+			}
+		}
+		
+		&.last {
+			.marker {
+				color: @background-glyph-color;
+
+				background-size: 2px 15px;
+				background-position: center top;
+				background-repeat: no-repeat;
+			}
+		}
+		
+		.user {
+			.userPortraitIcon;
+
+			margin: 0 7px 0 40px;
+		}
+		
+		.event {
+			padding-bottom: 20px;
+			display: block;
+			margin-left: 120px;
+			position: relative;
+			
+			& > table, & > .list-container, & > p {
+				margin-left: 42px;
+				padding-left: 30px;
+				clear: both;
+			}
+			
+			.list-container {
+				margin-top: 30px;
+			}
+			
+			& > p {
+				color: @medium-text-color;
+
+				.heading {
+					font-weight: @weight-heavy;
+				}
+			}
+			
+			.description {
+				font-size: @bookmark-heading-font-size + 1;
+				font-weight: @weight-medium;
+				top: 8px;
+				position: relative;
+				vertical-align: top;
+			}
+		}
+	}
+}
+
+.list-container {
+	display: block;
+	overflow: auto;
+	
+	ul {
+		float: left;
+		
+		li {
+			font-size: @default-font-size;
+			font-weight: @weight-book;
+			color: @normal-text-color;
+
+			label {
+				display: inline-block;
+				
+				width: 115px;
+				
+				text-align: right;
+				color: @light-text-color;
+				font-size: @default-font-size - 1px;
+				
+				margin-right: 8px;
+			}
+		}
+	}
+}
+
+div.comment-list {
+	margin-left: 200px;
+	
+	@media (max-width: @small-tablet-screen-width) {
+		margin-left: 0;
+	}
+	
+	.comment-line {
+		margin-bottom: 30px;
+		overflow: auto;
+		
+		.user {
+			.userPortraitIcon;
+			margin-right: 16px;
+		}
+		
+		.file-list-holder {
+			margin: 10px 0 0;
+
+			h4 {
+				margin: 13px 0 0 51px;
+				float: left;
+			}
+			
+			.file-list {
+				margin: 0 0 0 165px;
+			}
+		}
+		
+		.comment-area {
+			overflow: auto;
+			margin-left: 51px;
+			max-width: 523px;
+
+			.info {
+				height: 35px; 
+				line-height: 35px;
+
+				.name {
+					font-weight: @weight-heavy;
+				}
+				
+				.age {
+					float: right;
+					color: @light-text-color;
+					font-style: italic;
+				}
+			}
+			
+			.comment {
+				max-width: 520px;
+				
+				&.post-box {
+					border: 1px solid @navigation-background-color;
+					border-radius: 5px;
+
+					position: relative;
+					height: 150px;
+					
+					.drag-feedback, .drag-feedback-overlay {
+						display: none;
+						position: absolute;
+						left: 0;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						pointer-events: none;
+					}
+
+					.drag-feedback-overlay {
+						background-color: @light-text-color;
+						opacity: 0.5;
+					}
+
+					.drag-feedback {
+						width: 100%;
+						height: 100%;
+
+						> div {
+							display: table-cell;
+							vertical-align: middle;
+							text-align: center;
+							color: @paper-background-color;
+							font-size: @default-font-size + 4px;
+						}
+					}
+					
+					&.event-dragover .drag-feedback-overlay {
+						display: block;
+					}
+					&.event-dragover .drag-feedback {
+						display: table;
+					}
+					
+					textarea {
+						position: absolute;
+						left: 12px;
+						top: 0;
+						width: 495px;
+						height: 111px;
+						padding: 12px 0;
+						overflow: hidden;
+					}
+					
+					.button-bar {
+						margin: 0;
+						color: @medium-text-color;
+						font-size: @default-font-size - 1px;
+						position: absolute;
+						bottom: 0;
+						right: 12px;
+						left: 12px;
+						padding-bottom: 6px;
+						
+						button, & > div {
+							vertical-align: middle;
+						}
+						
+						button {
+							&:last-child {
+								padding-right: 0;
+							}
+						}
+					}
+					
+					ul.file-upload-list {
+						margin: 10px 0 5px;
+						text-align: left;
+						padding-bottom: 10px;
+						border-bottom: 1px solid @light-text-color;
+						
+						.delete {
+							color: @navigation-background-color;
+							cursor: pointer;
+							margin-left: 10px;
+						}
+					}
+				}
+			}
+			
+			.action-box {
+				margin: 15px 0 0;
+				line-height: 30px;
+				
+				span {
+					cursor: pointer;
+				}
+
+				button.solid {
+					float: right;
+					vertical-align: middle;
+				}
+				
+				.checkbox {
+					margin: 0 7px 0 15px;
+					top: 2px;
+					position: relative;
+				}
+			}
+		}
+	}
+}
+
+.area {
+	&.text-list {
+		font-size: @default-font-size + 4px;
+	
+		& > div {
+			display: inline-block;
+			margin-right: 42px;
+			
+			&:last-child {
+				margin-right: 0;
+			}
+			
+			label {
+				color: @medium-text-color;
+				margin-right: 8px;
+				border-bottom: none;
+			}
+			
+			span {
+				border-bottom: 1px dotted @medium-text-color;
+			}
+		}
+	}
+}

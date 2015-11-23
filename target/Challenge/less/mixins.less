@@ -1,0 +1,43 @@
+/******************************************************************************************
+
+Utility mix-ins
+
+******************************************************************************************/
+
+.indentedBox(@bottom-margin: 50px) {
+	margin: 0 0 @bottom-margin 0;
+	clear: left;
+	
+	@media (max-width: @tablet-screen-width) {
+	margin-left: 10px;
+	clear: left;
+	}
+	
+	@media (max-width: @small-tablet-screen-width) {
+	margin: 0 0 @bottom-margin;
+	}
+	
+	@media (max-width: @max-mobile-width) {
+	margin-left: 5px;
+	}
+}
+
+.columnWidth(@column, @masterwidth, @pixelwidth) {
+	&:nth-child(@{column}) {
+	width: 100% / @masterwidth * @pixelwidth;
+	}
+}
+
+.animation(@name, @duration: 300ms, @delay: 0, @ease: ease) {
+	-webkit-animation: @name @duration @delay @ease;
+	-moz-animation: @name @duration @delay @ease;
+	-ms-animation: @name @duration @delay @ease;
+}
+
+.keyframes(@name, @frames) {
+	@-webkit-keyframes @name { @frames(); }
+	@-moz-keyframes @name { @frames(); }
+	@-ms-keyframes @name { @frames(); }
+	@-o-keyframes @name { @frames(); }
+	@keyframes @name { @frames(); }
+}

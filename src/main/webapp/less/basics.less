@@ -1,0 +1,101 @@
+/******************************************************************************************
+
+Basic styles
+
+******************************************************************************************/
+
+html, body {
+	.default-font-styles();
+	
+	background-color: @pasteboard-background-color;
+}
+
+h1 {
+	font-size: @header-heading-font-size;
+	font-weight: @header-heading-font-weight;
+	color: @dark-heading-font-color;
+	
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: @page-heading-font-size;
+	font-weight: @page-heading-font-weight;
+	color: @dark-heading-font-color;
+	
+	margin-bottom: 20px;
+	
+	@media (max-width: @max-mobile-width) {
+		font-size: ceil(@page-heading-font-size / 1.3);
+	}
+
+	.subheading {
+		display: block;
+		
+		font-size: @page-subheading-font-size;
+		font-weight: @page-subheading-font-weight;
+		color: @light-heading-font-color;
+	}
+}
+
+h3 {
+	font-size: @section-heading-font-size;
+	font-weight: @section-heading-font-weight;
+	color: @dark-heading-font-color;
+	
+	margin-bottom: 20px;
+}
+
+h4 {
+	font-size: @default-font-size + 2px;
+	font-weight: @section-heading-font-weight;
+	color: @dark-heading-font-color;
+	
+	margin: 0 0 20px;
+}
+
+p {
+	margin-bottom: 15px;
+}
+
+b, strong {
+	font-weight: @weight-heavy;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+}
+
+button, input, textarea {
+	.default-font-styles();
+}
+
+textarea, input {
+	outline: none;
+	resize: none;
+	border: none;
+}
+
+#content {
+	position: relative;
+	background-color: @paper-background-color;
+	
+	margin: @default-gap 35px 12px;
+	padding: 42px 30px;
+	
+	@media (min-width: @max-screen-width) {
+		margin: @default-gap auto 12px;
+		max-width: @max-screen-width - (35px * 2) - (30px * 2);
+	}
+	
+	@media (max-width: @small-tablet-screen-width) {
+		padding: 42px 15px;
+	}
+	
+	@media (max-width: @max-mobile-width) {
+		 margin: @default-gap 5px 12px;
+		 padding: 42px 10px;
+	}
+}

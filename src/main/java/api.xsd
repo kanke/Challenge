@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kanke.com/api"
+    xmlns:tns="http://www.kanke.com/api" elementFormDefault="qualified">
+ 
+ 
+    <element name="expense">
+        <complexType>
+            <sequence>
+                <element name="expenseId" type="int" />
+                <element name="reason" type="string" />
+                <element name="amount" type="double" />
+                <element name="vatAmount" type="double" />
+                <element name="date" type="date" />
+            </sequence>
+        </complexType>
+    </element>
+
+ 
+</schema>

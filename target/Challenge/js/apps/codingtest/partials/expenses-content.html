@@ -1,0 +1,44 @@
+<div ng-controller="ctrlExpenses">
+	<h2>Expenses</h2>
+	
+	<div bookmarklist id="bookmarks" class="section-list">
+	</div>
+	
+	<h3>Add an expense</h3>
+	<form name="expensesform">
+		<ul>
+			<li>
+				<label>Date</label>
+				<input type="text" ng-required="true" ng-model="newExpense.date" ui-date="dateOptions" placeholder="dd/mm/yyyy" />
+			</li>
+			<li>
+				<label>Amount</label>
+				<input type="text" ng-required="true" ng-model="newExpense.amount" placeholder="00.00" />
+			</li>
+			<li>
+				<label>Reason</label>
+				<div auto-resize-form resize-watches="newExpense.reason" resize-sources="textarea" class="auto-resize">
+					<textarea ng-required="true" ng-model="newExpense.reason" ng-trim="false" placeholder="why oh why?"></textarea>
+				</div>
+			</li>
+			<li>
+				<label></label>
+				<button ng-click="saveExpense()" class="solid">Save Expense</button> <button ng-click="clearExpense()">cancel</button>
+			</li>
+		</ul>
+	</form>
+	
+	<h3>Submitted expenses</h3>
+	<div class="list-table expenses-data">
+		<div class="header-row">
+			<div>Date</div>
+			<div class="figures">Amount (inc. VAT)</div>
+			<div class="figures">Reson</div>
+		</div>
+		<div ng-repeat="expense in expenses" class="body-row">
+			<div>{{expense.date | date:'dd MMM yyyy'}}</div>
+			<div class="figures">{{expense.amount | currency:"&pound;"}}</div>
+			<div class="figures">{{expense.reason}}</div>
+		</div>
+	</div>
+</div>

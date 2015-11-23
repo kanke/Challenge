@@ -1,0 +1,48 @@
+<div ng-controller="ctrlNavigation" class="navigation-bar top-navigation-bar">
+	<div class="navigation-container">
+		<div class="icon-bar mobile">
+			<div class="icon clickable" clicktoggle="#app-menu" hide-on="scroll,click" target-position="left">
+				<i class="fa fa-bars"></i>
+			</div>
+		</div>
+		<div class="logo">
+			<a click-to-window ng-href="#/"></a>
+		</div>
+		<h1>
+			{{mainTitle}}
+		</h1>
+		<div id="search-bar" class="search-bar">
+			<div class="icon clickable"><i class="fa fa-search"></i></div>
+			<div class="search-field"><input ng-model="searchtext" placeholder="enter search text" /></div>
+		</div>
+		<div class="icon-bar">
+			<div class="icon clickable" searchbar="#search-bar"><i class="fa fa-search"></i></div>
+			<div class="icon clickable" clicktoggle="#app-menu" hide-on="scroll,click" target-position="center"><i class="fa fa-bars"></i></div>
+			<div class="icon clickable" clicktoggle="#notification-menu" hide-on="scroll,click" target-position="right"><i class="fa fa-bell"></i></div>
+			<div class="icon clickable" clicktoggle="#user-menu" hide-on="scroll,click" target-position="right"><div class="user"><i class="fa fa-circle"></i><span>SK</span></div></div>
+		</div>
+	</div>
+	<div id="app-menu" class="app-popup">
+		<div ng-repeat="app in appSections | orderBy:['level', 'title']" class="app-icon"><a click-to-window ng-href="#/{{app.app}}"><img ng-src="{{app.image}}" /><span>{{app.title}}</span></a></div>
+	</div>
+	<div id="notification-menu" class="app-popup text-list">
+		<ul>
+			<li>4 Notifications</li>
+			<li class="seperator"></li>
+			<li><span class="index">1</span><span class="notification">Jack Torrance has begun writing a lengthy novel using an old typewriter</span><i class="fa fa-chevron-right"></i></li>
+			<li><span class="index">2</span><span class="notification">Danny Torrance has been riding his tricycle around the hotel</span><i class="fa fa-chevron-right"></i></li>
+			<li><span class="index">3</span><span class="notification">Jack Torrance has had a vision at the bar in the ballroom</span><i class="fa fa-chevron-right"></i></li>
+			<li><span class="index">4</span><span class="notification">Jack Torrance has purchased a nice shiny axe and is using catch phrases from a TV show</span><i class="fa fa-chevron-right"></i></li>
+		</ul>
+	</div>
+	<div id="user-menu" class="app-popup text-list">
+		<ul>
+			<li>Stanley Kubrick<span class="email">stanley.kubrick@gmail.com</span></li>
+			<li class="seperator"></li>
+			<li>Account</li>
+			<li>Setting</li>
+			<li class="seperator"></li>
+			<li>Sign out</li>
+		</ul>
+	</div>
+</div>

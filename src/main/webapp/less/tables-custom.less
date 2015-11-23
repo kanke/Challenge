@@ -1,0 +1,29 @@
+/******************************************************************************************
+
+Table specific styles
+
+******************************************************************************************/
+
+div.list-table {
+	&.expenses-data {
+		min-width: 590px;
+
+		& > div {
+			color: @light-text-color;
+		}
+		
+		&.body-row > div {
+			&:nth-child(2) {
+				color: @dark-text-color;
+			}
+		}
+	}
+}
+
+.large-column-table {
+	&.labour-compliance {
+		& > div {
+			width: 19%;
+		}
+	}
+}

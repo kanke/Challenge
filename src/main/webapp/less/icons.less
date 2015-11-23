@@ -1,0 +1,82 @@
+/******************************************************************************************
+
+Icon specific styles
+
+******************************************************************************************/
+
+i.icon {
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+	color: @background-glyph-color;
+	
+	&.issue {
+		background-image: url(../img/flag-green.svg);
+		background-size: 18px 18px;
+		width: 18px;
+		height: 18px;
+		
+		&.positive {
+			background-image: url(../img/flag-green.svg);
+		}
+		
+		&.negative {
+			background-image: url(../img/flag-red.svg);
+		}
+	}
+	
+	&.expand {
+		background-image: url(../img/plus-circled-outlined-grey.svg);
+		background-size: 17px 17px;
+		width: 17px;
+		height: 17px;
+		
+		&.toggle-show {
+			background-image: url(../img/cross-circled-outlined-red.svg);
+		}
+	}
+	
+	&.sort {
+		background-image: url(../img/arrow-down-red.svg);
+		background-size: 10px 10px;
+		width: 10px;
+		height: 10px;
+	}
+	
+	&.home {
+		background-image: url(../img/arrow-front-up-grey.svg);
+		background-size: 20px 20px;
+		width: 20px;
+		height: 20px;
+	}
+	
+	&.dropdown {
+		background-image: url(../img/arrow-down-red.svg);
+		background-size: 15px 15px;
+		width: 15px;
+		height: 15px;
+		margin-left: 10px;
+	}
+	
+	&.hamburger {
+		display: inline-block;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1;
+		
+		color: @navigation-background-color;
+
+		width: 15px;
+		height: 15px;
+		
+		&:before {
+			content: "\f0c9";
+		}
+	}
+}

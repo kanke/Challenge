@@ -1,0 +1,23 @@
+<div ng-controller="ctrlVersion">
+	<h2>Version</h2>
+	
+	<div class="table-holder centered">
+		<div class="filter-container">
+			<div class="date">
+				<label>Application:</label>
+				{{ config.version }}
+			</div>
+			<div class="date">
+				<label>Angular.js:</label>
+				{{ config.angular }}
+			</div>
+			<div class="date">
+				<label>Build date:</label>
+				{{ config.builddate | date:'dd/mm/yy hh:mm' }}
+			</div>
+		</div>
+	</div>
+	
+	<div bookmarklist id="bookmarks" class="section-list">
+ 	</div>
+</div>
