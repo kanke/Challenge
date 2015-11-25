@@ -35,16 +35,6 @@ public class DAO {
         return instance;
     }
 
-
-    public Expense getExpense(int expensesId) {
-        Session session = factory.openSession();
-        String hql = "from Expense where expensesId = :expensesId";
-        Query query = session.createQuery(hql);
-        query.setParameter("expensesId", expensesId);
-        List<Expense> list = query.list();
-        return list.get(0);
-    }
-
     public List<Expense> getExpenses() {
         Session session = factory.openSession();
         String hql = "from Expense";
@@ -72,13 +62,4 @@ public class DAO {
         session.close();
     }
 
-
-    public Expense updateExpense(Expense expense) {
-        Session session = factory.openSession();
-        System.out.println("DAO.updateExpense()");
-        session.beginTransaction();
-        session.update(expense);
-        session.getTransaction().commit();
-        return expense;
-    }
 }

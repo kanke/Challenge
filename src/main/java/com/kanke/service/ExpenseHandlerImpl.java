@@ -13,16 +13,11 @@ public class ExpenseHandlerImpl implements ExpenseHandler {
 
 
     public Expense addExpense(Expense newExp) {
-       // Expense exp = DAO.instance().getExpense();
-      //  if (exp == null) {
-            DAO.instance().addExpense(newExp);
-            return newExp;
-       // }
-       // return exp;
+        DAO.instance().addExpense(newExp);
+        return newExp;
+
     }
-    public Expense getExpense(int expensesId) {
-        return DAO.instance().getExpense(expensesId);
-    }
+
 
     public List<Expense> getExpenses() {
         return DAO.instance().getExpenses();
@@ -32,9 +27,4 @@ public class ExpenseHandlerImpl implements ExpenseHandler {
         DAO.instance().cancelExpense(expensesId);
     }
 
-    public Expense updateExpense(Expense expense) {
-
-       DAO.instance().updateExpense(expense);
-        return expense;
-    }
 }

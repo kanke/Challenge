@@ -9,12 +9,9 @@ public interface ExpenseHandler {
 
     public Expense addExpense(Expense newExp);
 
-    public Expense getExpense(int expensesId);
-
     public List<Expense> getExpenses();
 
     public void deleteExpense(int expensesId);
 
-    public Expense updateExpense(Expense expense);
 
 }

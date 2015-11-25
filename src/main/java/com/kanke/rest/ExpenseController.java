@@ -14,21 +14,6 @@ import java.util.List;
 @Path("/")
 public class ExpenseController {
 
-
-    @GET
-    @Path("/{expensesId}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public Response getExpense(
-            @PathParam(value = "expensesId") int expensesId) {
-        Expense exp = new ExpenseHandlerImpl().getExpense(expensesId);
-        if (exp != null) {
-            return Response.ok().entity(exp).build();
-        } else {
-            return Response.status(404).build();
-        }
-    }
-
-
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public Response getExpenses() {
@@ -56,7 +41,7 @@ public class ExpenseController {
     @DELETE
     @Path("/{expensesId}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public Response cancelTicket(@PathParam(value = "expensesId") int expensesId) {
+    public Response cancelExpense(@PathParam(value = "expensesId") int expensesId) {
         new ExpenseHandlerImpl().deleteExpense(expensesId);
         return Response.ok().build();
     }
